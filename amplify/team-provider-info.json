@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myappjava-dev-152656-authRole",
+      "UnauthRoleArn": "arn:aws:iam::501457310216:role/amplify-myappjava-dev-152656-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::501457310216:role/amplify-myappjava-dev-152656-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-myappjava-dev-152656-deployment",
+      "UnauthRoleName": "amplify-myappjava-dev-152656-unauthRole",
+      "StackName": "amplify-myappjava-dev-152656",
+      "StackId": "arn:aws:cloudformation:us-east-1:501457310216:stack/amplify-myappjava-dev-152656/6a4310d0-334a-11ed-b215-12513e022799",
+      "AmplifyAppId": "dgvp6sxrgg9u1"
+    },
+    "categories": {
+      "auth": {
+        "myappjavaef2aa368": {}
+      }
+    }
+  }
+}
