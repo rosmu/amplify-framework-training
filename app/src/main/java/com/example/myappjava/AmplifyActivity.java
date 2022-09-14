@@ -63,7 +63,7 @@ public class AmplifyActivity extends AppCompatActivity {
         });
 
         // Auth category is selected by default
-        navigationView.setCheckedItem(R.id.nav_auth);
-        navigationView.getMenu().performIdentifierAction(R.id.nav_auth, 0);
+        navigationView.setCheckedItem(R.id.auth_graph);
+        navigationView.getMenu().performIdentifierAction(R.id.auth_graph, 0);
     }
 }

@@ -22,4 +22,9 @@
     <string name="sign_in_web_ui">Sign in with web UI</string>
     <string name="confirm_sign_up">Confirm sign up</string>
     <string name="phone">Phone</string>
+    <string name="description">Description</string>
+    <string name="completed">Completed</string>
+    <string name="modify">Modify</string>
+    <string name="add">Add</string>
+    <string name="graphql_api">GraphQL API</string>
 </resources>

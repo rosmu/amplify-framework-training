@@ -3,13 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/auth_graph">
+    app:startDestination="@id/graphql_api">
 
     <activity
         android:id="@+id/main"
         android:name="com.example.myappjava.AmplifyActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_amplify" />
+
+    <fragment
+        android:id="@+id/graphql_api"
+        android:name="com.example.myappjava.api.graphql.GraphQLAPIFragment"
+        android:label="@string/graphql_api"
+        tools:layout="@layout/fragment_graphql_api" />
 
     <navigation
         android:id="@+id/auth_graph"

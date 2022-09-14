@@ -48,7 +48,7 @@ public class SignUpFragment extends BaseFragment {
                             if (step == AuthSignUpStep.CONFIRM_SIGN_UP_STEP) {
                                 findNavController(this).navigate(R.id.to_confirm_sign_up);
                             } else if (step == AuthSignUpStep.DONE) {
-                                findNavController(this).navigate(R.id.nav_auth);
+                                findNavController(this).navigate(R.id.auth_graph);
                             } else {
                                 throw new RuntimeException(String.format("Unexpected signup step %s; Not implemented", step));
                             }

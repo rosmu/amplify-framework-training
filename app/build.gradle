@@ -47,6 +47,10 @@ dependencies {
         exclude group: "androidx.navigation"
     }
 
+    implementation('com.amplifyframework:aws-api:1.37.3') {
+        exclude group: "androidx.navigation"
+    }
+
     // Support for Java 8 features
     //noinspection GradleDependency
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'

@@ -1,0 +1,5 @@
+{
+  "AppSyncApiName": "myappjava",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false
+}
