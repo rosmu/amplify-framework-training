@@ -3,26 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/auth_graph">
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.myappjava.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+    <activity
+        android:id="@+id/main"
+        android:name="com.example.myappjava.AmplifyActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_amplify" />
+
+    <navigation
+        android:id="@+id/auth_graph"
+        app:startDestination="@id/auth">
+        <fragment
+            android:id="@+id/auth"
+            android:name="com.example.myappjava.auth.AuthFragment"
+            android:label="@string/authentication"
+            tools:layout="@layout/fragment_auth" />
+        <fragment
+            android:id="@+id/sign_in"
+            android:name="com.example.myappjava.auth.SignInFragment"
+            android:label="@string/sign_in"
+            tools:layout="@layout/fragment_sign_in">
+            <action
+                android:id="@+id/to_sign_up"
+                app:destination="@id/sign_up" />
+        </fragment>
+        <fragment
+            android:id="@+id/sign_up"
+            android:name="com.example.myappjava.auth.SignUpFragment"
+            android:label="@string/sign_up"
+            tools:layout="@layout/fragment_sign_up">
+            <action
+                android:id="@+id/to_confirm_sign_up"
+                app:destination="@id/confirm_sign_up" />
+        </fragment>
+        <fragment
+            android:id="@+id/confirm_sign_up"
+            android:name="com.example.myappjava.auth.ConfirmSignUpFragment"
+            android:label="@string/confirm_sign_up"
+            tools:layout="@layout/fragment_confirm_sign_up" />
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.myappjava.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+            android:id="@+id/to_auth"
+            app:destination="@id/auth"
+            app:popUpTo="@id/auth" />
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+            android:id="@+id/to_sign_in"
+            app:destination="@id/sign_in"
+            app:popUpTo="@id/sign_in"
+            app:popUpToInclusive="true" />
+    </navigation>
 </navigation>

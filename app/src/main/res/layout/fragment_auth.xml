@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="AuthBinding">
+
+        <variable
+            name="isLoggedIn"
+            type="Boolean" />
+
+        <variable
+            name="username"
+            type="String" />
+
+        <variable
+            name="fragment"
+            type="com.example.myappjava.auth.AuthFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/userTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:text="@{isLoggedIn? @string/signed_in_as(username) : @string/not_signed_in}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintBottom_toTopOf="@id/signInWithWebUiBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Signed in as username" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signInWithWebUiBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            android:onClick="@{() -> fragment.signInWithWebUI()}"
+            android:text="@string/sign_in_web_ui"
+            app:layout_constraintBottom_toTopOf="@id/signInWithCustomUIBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userTV" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signInWithCustomUIBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:onClick="@{() -> fragment.signInWithCustomUI()}"
+            android:text="@string/sign_in_with_custom_ui"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signInWithWebUiBtn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signOutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:onClick="@{() -> fragment.signOut()}"
+            android:text="@string/sign_out"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userTV" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/signedOutGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibleIfIt="@{!isLoggedIn}"
+            app:constraint_referenced_ids="signInWithCustomUIBtn, signInWithWebUiBtn" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/signedInGroup"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibleIfIt="@{isLoggedIn}"
+            app:constraint_referenced_ids="signOutBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,12 +1,25 @@
 <resources>
-    <string name="app_name">MyAppJava</string>
+    <string name="app_name">Amplify training</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="nav_header_title">Amplify Android Integration</string>
+    <string name="amplify">Amplify</string>
+    <string name="amplify_framework">Amplify framework</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- Auth -->
+    <string name="sign_out">Sign out</string>
+    <string name="signed_in_as">Sign in as %s</string>
+    <string name="confirmation_code">Confirmation code</string>
+    <string name="confirm_code">Confirm code</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="new_to_platform_sign_up">New to Amplify? Sign up</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="sign_in_with_custom_ui">Sign in with custom UI</string>
+    <string name="not_signed_in">Not logged in</string>
+    <string name="authentication">Authentication</string>
+    <string name="sign_in_web_ui">Sign in with web UI</string>
+    <string name="confirm_sign_up">Confirm sign up</string>
+    <string name="phone">Phone</string>
 </resources>

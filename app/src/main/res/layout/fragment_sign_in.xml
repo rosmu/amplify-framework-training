@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class=".auth.SignInBinding">
+
+        <variable
+            name="fragment"
+            type="com.example.myappjava.auth.SignInFragment" />
+
+        <variable
+            name="vm"
+            type="com.example.myappjava.auth.AuthViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/dp_16"
+        tools:context=".auth.SignInFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameTIL"
+            style="@style/AuthTextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:lines="1"
+                android:text="@={vm.username}"
+                android:textColor="@color/grey_212121"
+                android:textSize="@dimen/sp_16"
+                tools:text="rosmu@amazon.com" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTIL"
+            style="@style/AuthTextInputLayoutStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/usernameTIL"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:lines="1"
+                android:maxLength="25"
+                android:text="@={vm.password}"
+                android:textColor="@color/grey_212121"
+                android:textSize="@dimen/sp_16"
+                tools:text="sam@#158" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signInBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_36"
+            android:enabled="@{!vm.username.isEmpty() &amp;&amp; !vm.password.isEmpty()}"
+            android:onClick="@{() -> fragment.onSignIn()}"
+            android:text="@string/sign_in"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordTIL" />
+
+        <TextView
+            android:id="@+id/signUpTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:gravity="center"
+            android:onClick="@{() -> fragment.onSignUp()}"
+            android:padding="@dimen/dp_8"
+            android:text="@string/new_to_platform_sign_up"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/signInBtn"
+            app:layout_constraintStart_toStartOf="@id/signInBtn"
+            app:layout_constraintTop_toBottomOf="@id/signInBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

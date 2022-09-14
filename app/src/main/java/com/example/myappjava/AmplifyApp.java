@@ -7,7 +7,7 @@ import com.amplifyframework.AmplifyException;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 
-public class App extends Application {
+public class AmplifyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();

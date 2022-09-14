@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark"
+    tools:showIn="@layout/activity_amplify">
+
+    <ImageView
+        android:id="@+id/logoIV"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:contentDescription="@string/amplify"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo_light" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:lines="1"
+        android:text="@string/amplify_framework"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_24"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/logoIV"
+        app:layout_constraintStart_toEndOf="@id/logoIV" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_8"
+        android:text="@string/nav_header_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
